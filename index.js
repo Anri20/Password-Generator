@@ -1,15 +1,15 @@
-const lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", 
-    "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", 
+const lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i",
+    "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v",
     "w", "x", "y", "z"];
 
-const uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", 
-    "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", 
+const uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I",
+    "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
     "W", "X", "Y", "Z"]
 
 const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 const symbols = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(",
-    ")", "_", "-", "+", "=", "{", "[", "}", "]", ",", "|", ":", ";", 
+    ")", "_", "-", "+", "=", "{", "[", "}", "]", ",", "|", ":", ";",
     "<", ">", ".", "?", "/"]
 
 const main = document.querySelector("main")
@@ -52,42 +52,47 @@ toggle.addEventListener("change", (e) => {
 btnGenerate.addEventListener("click", () => {
     let characters = []
 
-    if(includeNumbers.checked) {
+    if (includeNumbers.checked) {
         console.log("include numbers")
         characters = characters.concat(numbers)
     }
 
-    if(includeLowercase.checked) {
+    if (includeLowercase.checked) {
         console.log("include lowercase")
         characters = characters.concat(lowercase)
     }
 
-    if(includeUppercase.checked) {
+    if (includeUppercase.checked) {
         console.log("include uppercase")
         characters = characters.concat(uppercase)
     }
 
-    if(includeSymbols.checked) {
+    if (includeSymbols.checked) {
         console.log("include symbols")
         characters = characters.concat(symbols)
     }
 
-    let passwordArray = []
+    if (characters.length > 0) {
 
-    while (passwordArray.length < 2) {
-        let password = ""
-        for (let i = 0; i < passLength.value; i++) {
-            const random = Math.floor(Math.random() * characters.length)
-            password += characters[random]
+        let passwordArray = []
+
+        while (passwordArray.length < 2) {
+            let password = ""
+            for (let i = 0; i < passLength.value; i++) {
+                const random = Math.floor(Math.random() * characters.length)
+                password += characters[random]
+            }
+            passwordArray.push(password)
         }
-        passwordArray.push(password)
+
+        pass1.textContent = passwordArray[0]
+        pass2.textContent = passwordArray[1]
+
+        pass1.style.cursor = "pointer"
+        pass2.style.cursor = "pointer"
+    } else {
+        alert("No character is selected. Please select character to include.")
     }
-
-    pass1.textContent = passwordArray[0]
-    pass2.textContent = passwordArray[1]
-
-    pass1.style.cursor = "pointer"
-    pass2.style.cursor = "pointer"
 })
 
 function copyToClipboard(e) {

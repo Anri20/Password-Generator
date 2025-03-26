@@ -22,38 +22,82 @@
         <div class="container">
             <h1>Generate a <br> <span>random password</span></h1>
             <p>Never use an insecure password again.</p>
-            <label for="password-length">Password Length:</label>
-            <select name="password-length" id="password-length">
-                <optgroup label="Weak">
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                </optgroup>
-                <optgroup label="Strong">
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
-                    <option value="29">29</option>
-                    <option value="30">30</option>
-                </optgroup>
-            </select>
+            <table>
+                <tr>
+                    <td>
+                        <label for="password-length">Password Length:</label>
+                    </td>
+                    <td>
+                        <select name="password-length" id="password-length">
+                            <optgroup label="Weak">
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                            </optgroup>
+                            <optgroup label="Strong">
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="include-numbers">Include Numbers:</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="include-numbers" id="include-numbers" checked>
+                        <label for="include-numbers">(e.g. 123456)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="include-lowercase">Include Lowercase Characters:</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="include-lowercase" id="include-lowercase" checked>
+                        <label for="include-lowercase">(e.g. abcdefgh)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="include-uppercase">Include Uppercase Characters:</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="include-uppercase" id="include-uppercase" checked>
+                        <label for="include-uppercase">(e.g. ABCDEFGH)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="include-symbols">Include Symbols:</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="include-symbols" id="include-symbols" checked>
+                        <label for="include-symbols">(e.g. !";#$%&)</label>
+                    </td>
+                </tr>
+            </table>
             <br>
             <button id="generate-password">Generate passwords</button>
             <hr>

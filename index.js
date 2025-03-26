@@ -11,6 +11,8 @@ const main = document.querySelector("main")
 
 const toggle = document.getElementById("toggleSwitch")
 
+const passLength = document.getElementById("password-length")
+
 const btnGenerate = document.getElementById("generate-password")
 
 const pass1 = document.getElementById("pass1")
@@ -38,10 +40,10 @@ toggle.addEventListener("change", (e) => {
 
 btnGenerate.addEventListener("click", () => {
     let passwordArray = []
-    
+
     while (passwordArray.length < 2) {
         let password = ""
-        for (let i = 0; i < 15; i++) {
+        for (let i = 0; i < passLength.value; i++) {
             const random = Math.floor(Math.random() * characters.length)
             password += characters[random]
         }
@@ -50,4 +52,29 @@ btnGenerate.addEventListener("click", () => {
 
     pass1.textContent = passwordArray[0]
     pass2.textContent = passwordArray[1]
+
+    pass1.style.cursor = "pointer"
+    pass2.style.cursor = "pointer"
 })
+
+function copyToClipboard(e) {
+    const text = e.textContent
+
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            // console.log("Copied to clipboard:", text)
+            e.style.backgroundColor = "#10b981"
+            e.style.color = "#273549"
+            setTimeout(() => {
+                e.style.backgroundColor = "#273549"
+                e.style.color = "#55F991"
+            }, 100)
+
+            setTimeout(() => {
+                alert(`Copied to clipboard`)
+            }, 150);
+        })
+        .catch(err => {
+            console.error("Failed to copy:", text)
+        })
+}

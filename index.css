@@ -101,6 +101,11 @@ div.container p {
     margin: 10px 0 50px 0;
 }
 
+select#password-length {
+    width: 100px;
+    margin: 0 0 20px 0;
+}
+
 button#generate-password {
     background-color: #10B981;
     color: #FFFFFF;

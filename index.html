@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="slider-container">
+        <span>Light Mode</span>
+        <label class="switch">
+            <input type="checkbox" id="toggleSwitch">
+            <span class="slider"></span>
+        </label>
+        <span>Dark Mode</span>
+    </div>
+    <main class="light-mode">
+        <div class="container">
+            <h1>Generate a <br> <span>random password</span></h1>
+            <p>Never use an insecure password again.</p>
+            <button id="generate-password">Generate passwords</button>
+            <hr>
+            <div class="password-container">
+                <span class="password"></span>
+                <span class="password"></span>
+            </div>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>
